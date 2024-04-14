@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { FlatList, Text, TouchableOpacity, View, StyleSheet, PanResponder, Pressable } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
 var notiSwitchStove = false;
 var notiSwitchWater = false;
+var stoveDone = false;
 var lastdivStove = 0;
 var lastdivWater = 0;
 var lastcountGlass = 0;
@@ -30,11 +31,10 @@ const HomePage = ({tdata}) => {
         }
         if (notiSwitch == true){
             lastdiv = lastdur/threshold;
-            var noti = {id: data.length, t: timeStr, warn: "The "+eventWord+" has been on for more than " +(threshold/60).toString()+ " minutes, is this normal?"};
-            setData([noti, ...data]);
+            setData(data => [{id: data.length, t: timeStr, warn: "The "+eventWord+" has been on for more than " +(threshold/60).toString()+ " minutes, is this normal?"}, ...data]);
             notiSwitch = false;
         }
-        happended({});
+        stoveDone = true;
         return notiSwitch, lastdiv;
     }
 
@@ -46,14 +46,12 @@ const HomePage = ({tdata}) => {
         var lastcount = 0;
         for (let i = 0; i < eventList.length; i++){
             event = eventList[i];
-            eventWord = eventWordList[i];
             lastcount = lastcountList[i];
             var time = new Date();
             const timeStr = ("0" + time.getHours()).slice(-2) + ("0" + time.getMinutes()).slice(-2) + ("0" + time.getSeconds()).slice(-2);
             const count = tdata[event].count;
             if ((lastcount == 0 && count != 0) || count > lastcount){
-                var noti = {id: data.length, t: timeStr, warn: "It seems that "+eventWord+" Please beware."};
-                setData([noti, ...data]);
+                setData(data => [{id: data.length, t: timeStr, warn: "It seems that "+eventWordList[i]+" Please beware."}, ...data]);
                 lastcount = count;
             }
             lastcountList[i] = lastcount;
@@ -61,8 +59,10 @@ const HomePage = ({tdata}) => {
     }
     
     notiSwitchStove, lastdivStove = longDur({ event: "gasStove", threshold: 300, notiSwitch: notiSwitchStove, lastdiv: lastdivStove });
-    if (data.length != 0){
+    if (stoveDone == true){
         notiSwitchWater, lastdivWater = longDur({ event: "runningTapWater", threshold: 60, notiSwitch: notiSwitchWater, lastdiv: lastdivWater });
+        stoveDone = false;
+        happended({});
     }
 
     const renderItem = ({ item }) => (
