@@ -17,8 +17,7 @@ Install important open-source library
 ## Running Tests
 
 To run train your own sound classification model:
-  1. Download [training dataset](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/ywl11_connect_hku_hk/EeLKRzTQyHJGqKIPIndKApcBNFKYe0g-QoPkTv3PM_NpDQ?e=ZFDboe)
-
+  1. Create training dataset.
   2. Run hyperparameter optimization and train it!
 
 ```bash
@@ -35,12 +34,8 @@ To run train your own sound classification model:
   // Change the parameters according to the results of bestPara_CLAP.py; Prepare a test wav file and change the path in classify function
 ```
 To test models:
-  1. Download [testing dataset](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/ywl11_connect_hku_hk/EQPg1vHfX2BFq6YiYFTF1iQB_AekRZd6UPtExS_Yeu7A5g?e=PG7qKC)
-  2. (Optional) Download other models you want to try
-     - [CLAP Minimized model](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/ywl11_connect_hku_hk/EberdBRBqHFBprT5hlwS-2UBv-G04YzihKh3jyS8ebz57w?e=zoouv9)
-     - [CLAP Random Search model](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/ywl11_connect_hku_hk/EY0fCavvhntEknSwZvxFO6kB1ahDKdkjfR-c2FoUlqlTDA?e=Eqkg3K)
-     - [CLAP Bayesian Optimization model](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/ywl11_connect_hku_hk/EXPEuPu6-gBOhWYAM85vK94Bd3MHCS_kE1xPkHjtEVdHnQ?e=J7ZqMZ)
-  3. Run the code below after change the model file name inside:
+  1. Create testing dataset.
+  2. Run the code below after change the model file name inside:
 ```bash
   cd Testing
   python3 testing.py <path_to_testingSet>
@@ -57,3 +52,8 @@ To start the system on Raspberry Pi, move the folder PiApp to your Raspberry Pi 
 ## About mobile app
 
 Download the apk to run the app, only Android users can run it at this moment.
+
+## Report, Technical Paper, Poster
+1. [Report](https://connecthkuhk-my.sharepoint.com/:b:/g/personal/ywl11_connect_hku_hk/EbeolD0unTpNlgIoR8XxrD8BX8b67UR2ik4YtyOu1_-3Kg?e=pWvLMa)
+2. [Technical Paper](https://connecthkuhk-my.sharepoint.com/:b:/g/personal/ywl11_connect_hku_hk/EekWDLz4qqNOju0QqbcEINYBDeUiMdklopLCUlzJ4CAAKQ?e=eyaZRC)
+3. [Poster](https://connecthkuhk-my.sharepoint.com/:b:/g/personal/ywl11_connect_hku_hk/EcR_mL3DZi1Al01x53cc9qUBRxefoQTFc9tU2DuGzMgoGg?e=RLEl2h)
