@@ -17,7 +17,7 @@ Install important open-source library
 ## Running Tests
 
 To run train your own sound classification model:
-  1. Create training dataset.
+  1. Create training dataset. [My training dataset](https://drive.google.com/file/d/16s-sF-4ifoQ_ZVVhxNEzt3hX7GPh3GLh/view?usp=sharing)
   2. Run hyperparameter optimization and train it!
 
 ```bash
@@ -34,7 +34,7 @@ To run train your own sound classification model:
   // Change the parameters according to the results of bestPara_CLAP.py; Prepare a test wav file and change the path in classify function
 ```
 To test models:
-  1. Create testing dataset.
+  1. Create testing dataset. [My testing dataset](https://drive.google.com/file/d/16FJEqn61CQXB-TNO3sfF45S-0xY6A5GB/view?usp=sharing)
   2. Run the code below after change the model file name inside:
 ```bash
   cd Testing
@@ -54,6 +54,6 @@ To start the system on Raspberry Pi, move the folder PiApp to your Raspberry Pi 
 Download the apk to run the app, only Android users can run it at this moment.
 
 ## Report, Technical Paper, Poster
-1. [Report](https://connecthkuhk-my.sharepoint.com/:b:/g/personal/ywl11_connect_hku_hk/EbeolD0unTpNlgIoR8XxrD8BX8b67UR2ik4YtyOu1_-3Kg?e=pWvLMa)
-2. [Technical Paper](https://connecthkuhk-my.sharepoint.com/:b:/g/personal/ywl11_connect_hku_hk/EekWDLz4qqNOju0QqbcEINYBDeUiMdklopLCUlzJ4CAAKQ?e=eyaZRC)
-3. [Poster](https://connecthkuhk-my.sharepoint.com/:b:/g/personal/ywl11_connect_hku_hk/EcR_mL3DZi1Al01x53cc9qUBRxefoQTFc9tU2DuGzMgoGg?e=RLEl2h)
+1. [Report](https://drive.google.com/file/d/1Txk1ynvRDH3PpqRTgHFfwjycaviaUNTO/view?usp=sharing)
+2. [Technical Paper](https://drive.google.com/file/d/1ppdhePuTqGRqHQUlmVTen9PTkD0UnPBI/view?usp=sharing)
+3. [Poster](https://drive.google.com/file/d/1_w06k8enUXWgGSuaGSmn8OOP-J7tipXc/view?usp=sharing)
